@@ -1,5 +1,12 @@
 # Ejercicios Bases de Datos
 
+## Transacción Bancaria
+
+Deberás modelar y definir una base de datos que permita almacenarrr usuarios y sus cuentas bancarias
+Luego deberás crear la transacción SQL que permita hacer una transferencia de fondos entre cuentras de usuarios
+
+## Definición de tablas Local-Pub
+
 Disponemos de la siguiente Base de Datos para gestionar la información de los pubs de una determinada provincia
 
 ![alt text](image.png)
