@@ -1,8 +1,4 @@
--- crea base de datos
-CREATE DATABASE lms_development;
 
--- se conecta a la base de datos
-\c lms_development
 
 -- Borra tablas en caso que existan
 DROP IF EXISTS TABLE respuestas;
@@ -93,3 +89,82 @@ INSERT INTO respuestas (respuesta_usuario, usuario_id, pregunta_id) VALUES
 ('Alan Turing', 7, 10), -- Correcta
 ('Tormenta China', 9, 9), -- Correcta
 ('Albert Einstein', 1, 10); -- Incorrecta
+
+
+
+
+-- CONSULTAS HECHAS EN CLASES
+
+select * from respuestas;
+
+select * from preguntas;
+
+select preguntas.pregunta, preguntas.respuesta , respuestas.respuesta_usuario
+from preguntas
+join respuestas
+on respuestas.pregunta_id = preguntas.id;
+
+select preg.pregunta, preg.respuesta as respuesta_correcta, res.respuesta_usuario 
+from preguntas preg
+join respuestas res
+on preg.id  = res.pregunta_id ;
+
+-- Unión sin "filtrar"
+SELECT * FROM
+usuarios JOIN respuestas
+ON usuarios.id = respuestas.usuario_id;
+
+
+select us.nombre, pre.pregunta , res.respuesta_usuario
+from respuestas res
+join usuarios us 
+	on  res.usuario_id = us.id
+join preguntas pre
+	on res.pregunta_id = pre.id
+	
+where pre.id = 1; -- para saber cuantas respuestas tiene la pregunta con id 1
+
+
+-- Unión de tres tablas
+select *
+from respuestas res
+join usuarios us 
+	on  res.usuario_id = us.id
+join preguntas pre
+	on res.pregunta_id = pre.id;
+
+-- Union de tres tablas, mostrando sólo respuestas correctas
+select *
+from respuestas res
+join usuarios us 
+	on  res.usuario_id = us.id
+join preguntas pre
+	on res.pregunta_id = pre.id
+
+WHERE res.respuesta_usuario = pre.respuesta;
+
+-- Union de tres tablas, mostrando sólo respuestas correctas
+select us.nombre, res.respuesta_usuario, pre.respuesta as respuesta_correcta
+from respuestas res
+join usuarios us 
+	on  res.usuario_id = us.id
+join preguntas pre
+	on res.pregunta_id = pre.id
+
+WHERE res.respuesta_usuario = pre.respuesta;
+
+
+SELECT u.nombre, r.respuesta_usuario, p.pregunta, p.respuesta AS respuesta_correcta
+FROM respuestas r
+JOIN usuarios u ON r.usuario_id = u.id
+JOIN preguntas p ON r.pregunta_id = p.id
+WHERE r.respuesta_usuario != p.respuesta;
+
+
+select count(pre.respuesta) as cantidad_respuestas_incorrectas
+from respuestas res
+join usuarios us on  res.usuario_id = us.id
+join preguntas pre on res.pregunta_id = pre.id
+where pre.respuesta != res.respuesta_usuario;
+
+
