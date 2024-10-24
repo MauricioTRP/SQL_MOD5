@@ -226,5 +226,15 @@ Estas uniones nos permiten relacionar multiples tablas para obtener respuestas.
 
 ![alt text](image-22.png)
 
+15. ¿Cómo se puede generar una lista de todos los miembros que han recomendado a otro miembro? Asegúrese de que no haya duplicados en la lista y de que los resultados estén ordenados por (apellido, nombre).
+
+> [!TIP]
+> Puedes hacer un `INNER JOIN` de la tabla members desde `memid` a `recommendedby`
+> Tambien el `DISTINCT` será de utilidad
+
+![alt text](image-23.png)
+
+16. 
+
 [1]: https://pgexercises.com/ "Manual interactivo en inglés"
 [2]: https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview "Conjunto de extensiones para visualización de Markdown estilo GitHub"
