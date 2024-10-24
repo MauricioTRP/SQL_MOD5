@@ -115,6 +115,14 @@ Para verificar que realmente se haya creado la data habiendo usado cualquiera de
 
 ![alt text](image-8.png)
 
+También, cuando estás en psql, puedes usar el comando
+
+```sql
+\dt cd.*
+```
+
+![alt text](image-24.png)
+
 ## Ejercicios
 
 Una vez montada la data, podrás realizar los siguientes ejercicios para practicar:
