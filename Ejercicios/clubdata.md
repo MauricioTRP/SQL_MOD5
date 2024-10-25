@@ -242,7 +242,32 @@ Estas uniones nos permiten relacionar multiples tablas para obtener respuestas.
 
 ![alt text](image-23.png)
 
-16. 
+16. ¿Cómo se puede generar una lista de todos los miembros, incluida la persona que los recomendó (si la hay)? Asegúrese de que los resultados estén ordenados por (apellido, nombre).
+
+> [!TIP]
+> Cuando quieres que la relación muestre registros que no "hace match", puedes usar `LEFT JOIN`, `RIGHT JOIN` o `FULL OUTER JOIN`
+
+![alt text](image-25.png)
+
+17. ¿Cómo se puede generar una lista de todos los miembros que han utilizado una cancha de tenis? Incluya en la lista el nombre de la cancha y el nombre del miembro en una sola columna. Asegúrese de que no haya datos duplicados y ordene por el nombre del miembro seguido del nombre de la instalación.
+
+> [!TIP]
+> Para relacionar `members` y `facilities` debes pasar por la tabla `bookings`, y para el "nombre" del miembro puedes usar el operador `CONCAT` o `||`
+
+![alt text](image-26.png)
+
+18. ¿Cómo se puede generar una lista de reservas para el día 14 de septiembre de 2012 que le costará al miembro (o invitado) más de $30? Recuerde que los invitados tienen costos diferentes a los de los miembros (los costos que se muestran son por "intervalo" de media hora) y el usuario invitado siempre tiene el ID 0. Incluya en su salida el nombre de la instalación, el nombre del miembro con formato de una sola columna y el costo. Ordene por costo descendente y no utilice ninguna subconsulta.
+
+![alt text](image-27.png)
+
+19. ¿Cómo se puede generar una lista de todos los miembros, incluida la persona que los recomendó (si la hubo), sin utilizar ninguna combinación? Asegúrese de que no haya duplicados en la lista y de que cada par de nombre + apellido esté formateado como una columna y ordenado.
+
+> [!TIP]
+> Puedes lograr esta consulta, usando subconsultas.
+> Ésta subconsulta puede ser "la columna" de la tabla resultado
+> y a la vez usar la tabla "padre" para definir clausulas de filtrado
+
+![alt text](image-29.png)
 
 [1]: https://pgexercises.com/ "Manual interactivo en inglés"
 [2]: https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview "Conjunto de extensiones para visualización de Markdown estilo GitHub"
