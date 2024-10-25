@@ -100,20 +100,20 @@ Con ésto deberías tener una base de datos exercises con un esquema cb, y las 3
 > [!IMPORTANT]
 > Debes refrescar constantemente DBeaver para que puedas visualizar los cambios que vas realizando.
 
-![Yustin Viver](artworks-000073588859-c11i3x-t500x500.jpg)
+![Yustin Viver](./imagenes/artworks-000073588859-c11i3x-t500x500.jpg)
 
 1. Para ejecutar el script, deberás crear a mano la base de datos:
-    - ![alt text](image-5.png)
+    - ![alt text](./imagenes/image-5.png)
 2. Y luego le asignarás el nombre `exercises`
-    - ![alt text](image-6.png)
+    - ![alt text](./imagenes/image-6.png)
 3. Abrirás un nuevo script, pegarás las líneas desde `CREATE SCHEMA cd;` en adelante y ejecutarás el Script
-    - ![alt text](image-7.png)
+    - ![alt text](./imagenes/image-7.png)
 
 ### Verificación
 
 Para verificar que realmente se haya creado la data habiendo usado cualquiera de los métodos anteriores, desde DBeaver puedes mirar el esquema `cd` de la base de datos exercises:
 
-![alt text](image-8.png)
+![alt text](./imagenes/image-8.png)
 
 También, cuando estás en psql, puedes usar el comando
 
@@ -121,7 +121,7 @@ También, cuando estás en psql, puedes usar el comando
 \dt cd.*
 ```
 
-![alt text](image-24.png)
+![alt text](./imagenes/image-24.png)
 
 ## Ejercicios
 
@@ -135,25 +135,25 @@ Una vez montada la data, podrás realizar los siguientes ejercicios para practic
 
 1. Obtener toda la información de la tabla facilities:
 
-![alt text](image-9.png)
+![alt text](./imagenes/image-9.png)
 
 2. Obtener un listado sólo con el nombre del servicio (facilities) y costo asociado:
 
-![alt text](image-10.png)
+![alt text](./imagenes/image-10.png)
 
 3. Obtener el listado de facilidades que tienen un costo asociado a los miembros:
 
 > [!TIP]
 > La clausula where te sirve para filtrar servicios con costos a los miembros membercost
 
-![alt text](image-11.png)
+![alt text](./imagenes/image-11.png)
 
 4. ¿Cómo se puede elaborar una lista de servicios que cobran una tarifa a los miembros y que dicha tarifa es inferior a 1/50 del coste de mantenimiento mensual? Devuelva la información sobre la `facid`, `name`, el `membercost` y el `monthlymaintenance` de los servicios en cuestión.
 
 > [!TIP]
 > Si conjugas la clausula `WHERE` con el operador lógico `AND` puedes crear más de una clausula a la vez
 
-![alt text](image-12.png)
+![alt text](./imagenes/image-12.png)
 
 ### Busqueda de texto
 
@@ -162,39 +162,39 @@ Una vez montada la data, podrás realizar los siguientes ejercicios para practic
 > [!TIP]
 > El operador `LIKE` junto con el string `%` te pueden ayudar
 
-![alt text](image-13.png)
+![alt text](./imagenes/image-13.png)
 
 6. Obtener la información de los servicios con ID 1 y 5.
 
 > [!TIP]
 > El operador `OR` te puede ayudar
 
-![alt text](image-14.png)
+![alt text](./imagenes/image-14.png)
 
 7. ¿Cómo se puede elaborar una lista de instalaciones, cada una de ellas etiquetada como "barata" o "cara" en función de si su coste de mantenimiento mensual es superior a 100 dólares? Devuelva el nombre y el mantenimiento mensual de las instalaciones en cuestión.
 
 > [!TIP]
 > La declaración `CASE` te puede ayudar en este caso
 
-![alt text](image-15.png)
+![alt text](./imagenes/image-15.png)
 
 8. ¿Cómo se puede generar una lista de los miembros que se unieron después de principios de septiembre de 2012? Devuelva el número de identificación del miembro, el apellido, el nombre y la fecha de ingreso de los miembros en cuestión.
 
-![alt text](image-16.png)
+![alt text](./imagenes/image-16.png)
 
 9. ¿Cómo se puede generar una lista ordenada de los primeros 10 apellidos (surname) de la tabla de miembros? La lista no debe contener duplicados.
 
 > [!TIP]
 > Recuerda que LIMIT te permite limitar la cantidad de resultados de una Query
 
-![alt text](image-17.png)
+![alt text](./imagenes/image-17.png)
 
 10. Por alguna razón, quieres una lista combinada de todos los apellidos y todos los nombres de las instalaciones. Sí, este es un ejemplo artificial 🦄. ¡Prepara esa lista!
 
 > [!TIP]
 > Puedes revisar la sentencia `UNION` de SQL
 
-![alt text](image-18.png)
+![alt text](./imagenes/image-18.png)
 
 ### Agregados
 
@@ -203,7 +203,7 @@ Una vez montada la data, podrás realizar los siguientes ejercicios para practic
 > [!TIP]
 > La función `MAX` de SQL te puede ayudar a obtener la informacion deseada
 
-![alt text](image-19.png)
+![alt text](./imagenes/image-19.png)
 
 12. Quieres obtener el nombre y apellido del último miembro que se registró, no solo la fecha ¿Cómo puedes hacerlo?
 
@@ -216,7 +216,7 @@ Una vez montada la data, podrás realizar los siguientes ejercicios para practic
 > [!tip]
 > También puedes usar LIMIT y ORDER BY para obtener la información necesaria
 
-![alt text](image-20.png)
+![alt text](./imagenes/image-20.png)
 
 ### Uniones y Subconsultas
 
@@ -228,11 +228,11 @@ Estas uniones nos permiten relacionar multiples tablas para obtener respuestas.
 > [!TIP]
 > La unión interna te ayudará a encontrar la solución a este problema
 
-![alt text](image-21.png)
+![alt text](./imagenes/image-21.png)
 
 14. ¿Cómo se puede generar una lista de las horas de inicio de las reservas de canchas de tenis para la fecha '2012-09-21'? Devolver una lista de emparejamientos de hora de inicio y nombre de la instalación, ordenados por hora
 
-![alt text](image-22.png)
+![alt text](./imagenes/image-22.png)
 
 15. ¿Cómo se puede generar una lista de todos los miembros que han recomendado a otro miembro? Asegúrese de que no haya duplicados en la lista y de que los resultados estén ordenados por (apellido, nombre).
 
@@ -240,25 +240,25 @@ Estas uniones nos permiten relacionar multiples tablas para obtener respuestas.
 > Puedes hacer un `INNER JOIN` de la tabla members desde `memid` a `recommendedby`
 > Tambien el `DISTINCT` será de utilidad
 
-![alt text](image-23.png)
+![alt text](./imagenes/image-23.png)
 
 16. ¿Cómo se puede generar una lista de todos los miembros, incluida la persona que los recomendó (si la hay)? Asegúrese de que los resultados estén ordenados por (apellido, nombre).
 
 > [!TIP]
 > Cuando quieres que la relación muestre registros que no "hace match", puedes usar `LEFT JOIN`, `RIGHT JOIN` o `FULL OUTER JOIN`
 
-![alt text](image-25.png)
+![alt text](./imagenes/image-25.png)
 
 17. ¿Cómo se puede generar una lista de todos los miembros que han utilizado una cancha de tenis? Incluya en la lista el nombre de la cancha y el nombre del miembro en una sola columna. Asegúrese de que no haya datos duplicados y ordene por el nombre del miembro seguido del nombre de la instalación.
 
 > [!TIP]
 > Para relacionar `members` y `facilities` debes pasar por la tabla `bookings`, y para el "nombre" del miembro puedes usar el operador `CONCAT` o `||`
 
-![alt text](image-26.png)
+![alt text](./imagenes/image-26.png)
 
 18. ¿Cómo se puede generar una lista de reservas para el día 14 de septiembre de 2012 que le costará al miembro (o invitado) más de $30? Recuerde que los invitados tienen costos diferentes a los de los miembros (los costos que se muestran son por "intervalo" de media hora) y el usuario invitado siempre tiene el ID 0. Incluya en su salida el nombre de la instalación, el nombre del miembro con formato de una sola columna y el costo. Ordene por costo descendente y no utilice ninguna subconsulta.
 
-![alt text](image-27.png)
+![alt text](./imagenes/image-27.png)
 
 19. ¿Cómo se puede generar una lista de todos los miembros, incluida la persona que los recomendó (si la hubo), sin utilizar ninguna combinación? Asegúrese de que no haya duplicados en la lista y de que cada par de nombre + apellido esté formateado como una columna y ordenado.
 
@@ -267,7 +267,7 @@ Estas uniones nos permiten relacionar multiples tablas para obtener respuestas.
 > Ésta subconsulta puede ser "la columna" de la tabla resultado
 > y a la vez usar la tabla "padre" para definir clausulas de filtrado
 
-![alt text](image-29.png)
+![alt text](./imagenes/image-29.png)
 
 [1]: https://pgexercises.com/ "Manual interactivo en inglés"
 [2]: https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview "Conjunto de extensiones para visualización de Markdown estilo GitHub"
