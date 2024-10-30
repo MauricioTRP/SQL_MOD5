@@ -1,0 +1,16 @@
+{
+  "name": "fallar_psql",
+  "version": "1.0.0",
+  "description": "Es un script que hace que el gestor de bases de datos sobrepoble una tabla con small int como llave primaria",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}
